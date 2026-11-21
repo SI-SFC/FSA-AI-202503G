@@ -1,12 +1,15 @@
 import axios from 'axios';
 import React from 'react'
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const CreateProduct = () => {
 
     const [name, setName] = useState("");
     const [price, setPrice] = useState("");
     const [image, setImage] = useState(null);
+
+    const navigate = useNavigate();
 
     const handleform = async (e)=>{
         e.preventDefault();
@@ -21,6 +24,7 @@ export const CreateProduct = () => {
         setName("");
         setPrice("");
         setImage(null);
+        navigate("/getproduct")
     }
 
   return (
